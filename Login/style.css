@@ -37,7 +37,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    border:solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
 }
 
 #user-input form button{
@@ -65,8 +69,11 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    height: 100vh;
+    border:solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f1ebe5;
 }
 
 #new-user form{
@@ -78,6 +85,7 @@ button{
     border-radius: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-bottom: 20px;
 }
 
 #hidingNewUser{
