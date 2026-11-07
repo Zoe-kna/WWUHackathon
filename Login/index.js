@@ -1,27 +1,30 @@
+function getUsers(){
+    try{
+        return JSON.parse(localStorage.getItem("users")) || [];
+    } catch (e) {
+        return [];
+    }
+}
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    window.user = document.getElementById('username1');
+
+    const user = document.getElementById('username1');
     const pass = document.getElementById('password');
 
-    const storedUser = localStorage.getItem('username');
-    const storedEmail = localStorage.getItem('email');
-    const storedPass = localStorage.getItem('password');
-    window.loggedIn = [window.user, false];
-
-    let loginSuccess = 0;
-
-    if(!storedUser && !storedEmail){
-        loginSuccess = -1;
-    } else if ((user === storedUser || user === storedEmail) && pass === storedPass){
-        loginSuccess = 1;
+    const users = getUsers();
+    
+    if(users.length === 0) {
+        alert("No users found. Please sign up first.");
+        return;
     }
 
-    if(loginSuccess === 1){
-        window.loggedIn[1] == true;
-        window.location.href = "../Homepage/index.html"
-    }else if(loginSuccess === -1){
-        alert("Account not found, create a new one");
-    }else{
+    const matchingUser = users.find(u => (u.username === user.value || u.email === user.value) && u.password === pass.value);
+
+    if(matchingUser) {
+        sessionStorage.setItem('loggedInUser', JSON.stringify({username: match.username, firstName: match.firstName}));
+        window.location.href = "../Homepage/index.html";
+    } else {
         alert("Password or Username incorrect");
     }
 });
@@ -53,24 +56,27 @@ function showLogin(){
 
 document.getElementById('signUpForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    localStorage.clear();
 
-    
-    window.firstName = document.getElementById('first').value;
-    window.lastName = document.getElementById('last').value;
-    const user = document.getElementById('user2').value;
-    const pass = document.getElementById('password2').value;
-    const email = document.getElementById('email').value;
+    const form = event.target;
+    const firstName = document.getElementById('first').value.trim();
+    const lastName = document.getElementById('last').value.trim();
+    const user = document.getElementById('user2').value.trim();
+    const pass = document.getElementById('password2').value.trim();
+    const email = document.getElementById('email').value.trim();
     const checkedBoxes = document.querySelectorAll('input[type=checkbox]:checked');
     const values = Array.from(checkedBoxes).map(checkbox => checkbox.value);
 
-    localStorage.setItem('username', user);
-    localStorage.setItem('firstName', firstName);
-    localStorage.setItem('lastName', lastName);
-    localStorage.setItem('pass', pass);
-    localStorage.setItem('email', email);
-    localStorage.setItem('interests', values);
 
+    const users = getUsers();
+    if(users.some(u => u.username === user || u.email === email)) {
+        alert("Username or email already exists. Please choose a different one.");
+        return;
+    }
+
+    users.push({ firstName, lastName, username: user, password: pass, email: email, values: values });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    sessionStorage.setItem('loggedInUser', JSON.stringify({username: user, firstName: firstName}));
     window.location.href = "../Homepage/index.html";
 });
 
