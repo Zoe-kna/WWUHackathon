@@ -1,4 +1,4 @@
-const map = L.map('map', {
+const map = L.map('mapItems', {
   //center: [48.73, -122.49],
   zoom: 13, 
 });
