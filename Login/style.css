@@ -21,7 +21,6 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     background-color: #f1ebe5;
-
 }
 
 #username1 {
@@ -49,11 +48,12 @@ body {
 }
 
 #user-input label{
+    flex: display;
+    justify-content: space-between;
     font-size: 20px;
-    flex: 0 0 100px;
     text-align: right;
     padding-right: 20px;
-} /* issue with space */
+}
 
 #user-input input{
     flex: 1;

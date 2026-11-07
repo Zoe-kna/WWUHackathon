@@ -1,12 +1,12 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
-    const user = getElementById('username1');
-    const pass = getElementById('password');
+    window.user = document.getElementById('username1');
+    const pass = document.getElementById('password');
 
     const storedUser = localStorage.getItem('username');
     const storedEmail = localStorage.getItem('email');
     const storedPass = localStorage.getItem('password');
+    window.loggedIn = [window.user, false];
 
     let loginSuccess = 0;
 
@@ -17,8 +17,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 
     if(loginSuccess === 1){
-        console.log("yippe yipee!");
-        alert("login works!");
+        window.loggedIn[1] == true;
+        window.location.href = "../Homepage/index.html"
     }else if(loginSuccess === -1){
         alert("Account not found, create a new one");
     }else{
@@ -53,20 +53,25 @@ function showLogin(){
 
 document.getElementById('signUpForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    localStorage.clear();
+
     
-    const firstName = document.getElementById('first').value;
-    const lastName = document.getElementById('last').value;
+    window.firstName = document.getElementById('first').value;
+    window.lastName = document.getElementById('last').value;
     const user = document.getElementById('user2').value;
     const pass = document.getElementById('password2').value;
     const email = document.getElementById('email').value;
+    const checkedBoxes = document.querySelectorAll('input[type=checkbox]:checked');
+    const values = Array.from(checkedBoxes).map(checkbox => checkbox.value);
 
     localStorage.setItem('username', user);
     localStorage.setItem('firstName', firstName);
     localStorage.setItem('lastName', lastName);
     localStorage.setItem('pass', pass);
     localStorage.setItem('email', email);
+    localStorage.setItem('interests', values);
 
-    window.location.href = "../Signup/index.html";
+    window.location.href = "../Homepage/index.html";
 });
 
 /*document.getElementById('')
