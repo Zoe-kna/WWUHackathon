@@ -7,7 +7,7 @@ body{
 #mainHeader {
   
   font-family: 'Impact', fantasy; 
-  
+
   flex-direction: column;
   height: min-content;
 
