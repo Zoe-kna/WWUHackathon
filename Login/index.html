@@ -10,21 +10,70 @@
     <main>
         <div class="login-box"> 
             <div class="Login">
+            </div>
+
+            <div id="user-input">
                 <h1> Login </h1>
+                <form id="loginForm">
+                    <label for="user1"> Email or username </label>
+                    <input type="text" id="username1" placeholder="username@email.com/username" required>
+                    <label for="pass1"> Password </label>
+                    <input type="password" id="password" name="password1" placeholder="Enter your password" required>
+                    <button type="submit"> Login </button>
+                </form>
             </div>
 
-            <div class="user input">
-                <p> Enter username or email </p>
-                <input type="text" placeholder="username/username@email.com" required>
-                <p> Enter password </p>
-                <input type="password" placeholder="Enter your password" required>
+            <button onclick="showSignUp()" id="nu"> New User? </button>
+
+            <div id="hidingNewUser">
+                <div id="new-user">
+                    <h1> New User Sign Up </h1>
+                    <form id="signUpForm">
+                        <label for="firstName"> First Name </label>
+                        <input type="text" id="first" required>
+                        <label for="lastName"> Last Name </label>
+                        <input type="text" id="last" required>
+                        <label for="user2"> Username</label>
+                        <input type="text" id="user2" required>
+                        <label for="email"> Email </label>
+                        <input type="text" id="email" placeholder="username@email.com" required>
+                        <label for="pass"> Password </label>
+                        <input type="password" id="password2" placeholder="Enter your password" required>
+                        <div id="interests">
+                            <p> Choose some issues that you're interested in</p>
+                            <div>
+                                <input type="checkbox" id="interest1">
+                                <label for="interests"> Gender Pay Gap </label>                      
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest2">
+                                <label for="interests"> Income Inequality </label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest3">
+                                <label for="interests"> Global Warming </label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="interest4">
+                                <label for="interests"> Gender Based Violence </label>
+                            </div>
+
+                            <div>
+                                <label for="interests"> Other: </label>
+                                <input type="text" id="otherInterests">
+                            </div>
+                        </div>
+
+                        <button type="new"> Create Account </button>
+                        <!--facebook or google or email. pick causes they care about, set location preference,-->
+                    </form>
+                </div>
             </div>
 
+            <button onclick="showLogin()" id="sl"> Have an Account? </button>
+
             </div>
-        </div> .login{
-    display: flex;
-    justfi
-}
+        </div>
     </main>
     <script src="index.js"></script>
   </body>

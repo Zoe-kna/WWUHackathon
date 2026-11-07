@@ -1,10 +1,97 @@
-*{
+body {
+    background-color: #423f32;
+    color: #423f32;
 }
-
 .login-box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
     height: 100vh;
+}
+
+#user-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f1ebe5;
+}
+
+#username1 {
+    font-size: small;
+}
+
+#password {
+    font-size: small;
+}
+
+#user-input form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+#user-input form button{
+    margin: 20px;
+}
+
+#user-input label{
+    flex: display;
+    justify-content: space-between;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#user-input input{
+    flex: 1;
+}
+
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#new-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f1ebe5;
+}
+
+#new-user form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+#hidingNewUser{
+    display: none;
+}
+
+#sl{
+    display: none;
 }
