@@ -27,10 +27,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 });
 
 function showSignUp(){
+    var w = document.getElementById("sl");
     var x = document.getElementById("hidingNewUser");
     var y = document.getElementById("user-input");
     var z = document.getElementById("nu");
 
+    w.style.display = "block"
     x.style.display = "block";
     y.style.display = "none";
     z.style.display = "none";
@@ -43,7 +45,7 @@ function showLogin(){
     var y = document.getElementById("user-input");
     var z = document.getElementById("nu");
 
-    w.style.display = "block"
+    w.style.display = "none"
     x.style.display = "none";
     y.style.display = "block";
     z.style.display = "block";
