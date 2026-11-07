@@ -43,3 +43,8 @@ L.control.layers(null, {
   'Events': events,
   'Petitions': petitions
 }).addTo(map);
+
+//add a geocoding control to the map
+L.Control.geocoder({
+    defaultMarkGeocode: true
+}).addTo(map);
