@@ -23,7 +23,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     if(matchingUser) {
         sessionStorage.setItem('loggedInUser', JSON.stringify({username: match.username, firstName: match.firstName}));
-        window.location.href = "../Homepage/index.html";
+        window.location.href = "../index.html";
     } else {
         alert("Password or Username incorrect");
     }
@@ -77,7 +77,7 @@ document.getElementById('signUpForm').addEventListener('submit', function(event)
     localStorage.setItem("users", JSON.stringify(users));
 
     sessionStorage.setItem('loggedInUser', JSON.stringify({username: user, firstName: firstName}));
-    window.location.href = "../Homepage/index.html";
+    window.location.href = "../index.html";
 });
 
 /*document.getElementById('')
